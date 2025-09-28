@@ -1,0 +1,10 @@
+echo "[*] Panda Activator by Arie-SR91"
+if [ ! -d /data/local/tmp/2 ]; then
+    rish cp -r scripts /data/local/tmp/2
+fi
+if [ ! -f /data/local/tmp/2/inject2.sh ]; then
+    rish cp -r scripts/* /data/local/tmp/2
+fi
+rish chmod 777 /data/local/tmp/2/*
+rish sh /data/local/tmp/2/inject2.sh
+am start --user 0 -n com.panda.mouse/com.chaozhuo.gameassistant.SplashActivity >/dev/null 2>&1
